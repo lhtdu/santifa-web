@@ -13,6 +13,13 @@ export default function ScrollSmootherProvider({
     if (initialized.current) return;
     initialized.current = true;
 
+    const isTouchDevice = () =>
+      window.matchMedia("(hover: none)").matches ||
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0;
+
+    if (isTouchDevice()) return;
+
     const init = async () => {
       const { gsap } = await import("gsap");
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");

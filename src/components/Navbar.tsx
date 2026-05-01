@@ -99,8 +99,8 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden fixed top-16 left-0 right-0 z-40 bg-white border-b border-[#f1f5f9] overflow-hidden transition-all duration-300 ${
-          isMobileOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        className={`lg:hidden fixed top-0 left-0 right-0 z-[60] bg-white border-b border-[#f1f5f9] overflow-hidden transition-all duration-300 ${
+          isMobileOpen ? "max-h-screen opacity-100 pt-16" : "max-h-0 opacity-0 pointer-events-none"
         }`}
       >
         <nav className="px-6 py-4 flex flex-col gap-1">
@@ -129,6 +129,14 @@ export default function Navbar() {
           </div>
         </nav>
       </div>
+
+      {/* Mobile overlay backdrop */}
+      {isMobileOpen && (
+        <div
+          className="fixed inset-0 z-[55] bg-black/20 lg:hidden"
+          onClick={() => setIsMobileOpen(false)}
+        />
+      )}
     </>
   );
 }
