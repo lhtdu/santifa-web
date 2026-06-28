@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Phone, Menu, X } from "lucide-react";
+import { CTA_LINKS } from "@/app/config/links";
 
 const navLinks = [
   { label: "Services", href: "#services" },
@@ -74,7 +75,7 @@ export default function Navbar() {
               (+84) 939 959 941
             </a>
             <a
-              href="https://forms.gle/TPtYyRLiU7yE3nzAA"
+              href={CTA_LINKS.bookCall}
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-2.5 bg-[#F15533] hover:bg-[#D94420] text-white font-semibold text-sm rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-orange-100 hover:-translate-y-0.5"
@@ -119,7 +120,7 @@ export default function Navbar() {
               <Phone size={14} /> (+84) 939 959 941
             </a>
             <a
-              href="https://forms.gle/TPtYyRLiU7yE3nzAA"
+              href={CTA_LINKS.bookCall}
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2.5 bg-[#F15533] text-white font-semibold text-sm rounded-lg text-center"

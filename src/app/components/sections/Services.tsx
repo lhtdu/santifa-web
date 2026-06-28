@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, ShoppingBag, Palette, Video, Check } from "lucide-react";
+import { CTA_LINKS } from "@/app/config/links";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -135,7 +136,7 @@ export default function Services() {
 
                 {/* View Details */}
                 <a
-                  href="https://forms.gle/TPtYyRLiU7yE3nzAA"
+                  href={CTA_LINKS.customQuote}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-[12px] font-medium transition-all hover:gap-2.5"

@@ -3,9 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 
 function useCountUp(target: number, duration: number, started: boolean) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(target);
   useEffect(() => {
     if (!started) return;
+    setCount(0);
     let start = 0;
     const increment = target / (duration / 16);
     const timer = setInterval(() => {
@@ -107,13 +108,19 @@ export default function StatsCards() {
                 animationDelay: `${i * 0.15}s`,
               }}
             >
-              {/* Number */}
+              {/* Number — real values rendered in HTML for SEO/no-JS fallback */}
               <div
                 className={`leading-none -mt-1 ${started ? "animate-number-pop" : "opacity-0"}`}
                 style={{ animationDelay: `${i * 0.15 + 0.3}s` }}
               >
                 {stat.prefix && <span className="text-[44px] sm:text-[56px] font-bold text-[#0b0f1a]">{stat.prefix}</span>}
-                <span className="text-[44px] sm:text-[56px] font-bold text-[#0b0f1a]">{counts[i]}</span>
+                <span
+                  className="text-[44px] sm:text-[56px] font-bold text-[#0b0f1a] counter"
+                  data-target={stat.number}
+                  aria-label={`${stat.prefix || ""}${stat.number}${stat.suffix}`}
+                >
+                  {started ? counts[i] : stat.number}
+                </span>
                 <span className="text-[44px] sm:text-[56px] font-bold text-[#ef4d23]">{stat.suffix}</span>
               </div>
 

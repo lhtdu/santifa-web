@@ -15,6 +15,8 @@ const projects = [
     metrics: ["$12.8K/mo Revenue", "$39.7K/90 Days", "200+ Orders/Month", "+340% Growth"],
     expanded: "Our team took over a struggling eBay dropshipping account with minimal listings and poor visibility. Within 90 days, we scaled to consistent $12.8K/month by implementing aggressive product research, listing optimization, competitive pricing strategy, and Meta ad campaigns.",
     image: "/img/track1.avif",
+    imageFallback: "/img/track1.png",
+    imageAlt: "eBay store dashboard showing $12.8K monthly revenue growth",
   },
   {
     tags: ["ETSY", "POD", "DESIGN"],
@@ -23,14 +25,18 @@ const projects = [
     metrics: ["$34.2K Revenue", "2,705 Orders", "7.4% Conversion", "+434% Traffic YoY"],
     expanded: "Starting from an Etsy POD store with underperforming listings, our team redesigned the product catalog with conversion-optimized artwork, rewritten descriptions with SEO-rich keywords, and a strategic approach to Etsy Ads. Over 6 months, scaled from scattered sales to $34,226 in revenue.",
     image: "/img/track2.avif",
+    imageFallback: "/img/track2.png",
+    imageAlt: "Etsy POD store with 7.4% conversion rate and $34.2K revenue",
   },
   {
-    tags: ["VSL", "AI UGC", "AI Slop Videos"],
+    tags: ["VSL", "AI UGC", "AI Creative"],
     title: "AI-powered ad creatives — delivered in 24h so you can test new ideas immediately",
     desc: "Fast-turnaround video ad creatives using AI tools. VSL scripts, UGC-style ads, and hook variations delivered at scale for rapid creative testing.",
     metrics: ["24h Turnaround", "VSL Scripts", "AI UGC Format", "A/B Testing Ready"],
     expanded: "Our ad creative team produced high-volume AI-assisted video content for multiple ecommerce clients, generating hundreds of creative variations for Meta testing. Each batch delivered within 24-36 hours with multiple hook angles, UGC-style presentations, and VSL formats.",
     image: "/img/track3.avif",
+    imageFallback: "/img/track3.png",
+    imageAlt: "AI-generated UGC video ad creatives for Meta testing",
   },
 ];
 
@@ -90,12 +96,19 @@ export default function Portfolio() {
               ref={(el) => { if (el) cardsRef.current[i] = el; }}
               className="bg-white rounded-2xl border-2 border-dashed border-gray-200 overflow-hidden hover:border-[#ef4d23]/30 hover:shadow-lg transition-all"
             >
-              <div className="w-full aspect-[16/9] overflow-hidden">
-                <img
-                  src={p.image}
-                  alt={p.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
+              <div className="w-full aspect-[16/9] overflow-hidden bg-gray-50">
+                <picture>
+                  <source srcSet={p.image} type="image/avif" />
+                  <img
+                    src={p.imageFallback}
+                    alt={p.imageAlt}
+                    width={600}
+                    height={338}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </picture>
               </div>
 
               <div className="p-5 pb-4 border-b border-gray-50">

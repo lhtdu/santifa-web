@@ -4,18 +4,9 @@ import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ChevronDown, Send } from "lucide-react";
+import { FAQS } from "../../config/faqs";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const faqs = [
-  { q: "How is this different from hiring a VA?", a: "A VA is one person doing tasks. We are a managed team with SOPs, quality control, and backup coverage. You don't manage individuals — you manage outcomes." },
-  { q: "Can I cancel anytime?", a: "Yes. Month-to-month after 30 days. Cancel with 30 days notice. No long-term lock-in." },
-  { q: "Where is your team based?", a: "Vietnam, working US business hours. Senior talent at lower cost with rigorous SOPs and management." },
-  { q: "Can I customize the packages you offer?", a: "Absolutely! Think of our packages as a base pizza—you can add or swap toppings (services) to create your perfect slice of digital success." },
-  { q: "How does pricing work?", a: "Flat fee and gross profit share. We're incentivized to grow your revenue AND protect your margins. Contact us for a custom quote." },
-  { q: "Can you work with my existing suppliers?", a: "Yes. You maintain all supplier relationships. We handle the operational layer: ordering, coordination, and tracking." },
-  { q: "How do I get started?", a: "It's easy! Just click that shiny 'Contact Us' button, shoot us a message, or give us a call. We'll grab coffee (virtually or in-person) and start brainstorming magic together." },
-];
 
 export default function FAQSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -37,7 +28,6 @@ export default function FAQSection() {
     if (!section) return;
 
     const ctx = gsap.context(() => {
-      // Header
       gsap.from(".faq-header", {
         opacity: 0,
         y: 24,
@@ -45,7 +35,6 @@ export default function FAQSection() {
         scrollTrigger: { trigger: ".faq-header", start: "top 85%" },
       });
 
-      // FAQ items stagger
       faqsRef.current.forEach((faq, i) => {
         if (!faq) return;
         gsap.from(faq, {
@@ -57,7 +46,6 @@ export default function FAQSection() {
         });
       });
 
-      // CTA
       if (ctaRef.current) {
         gsap.from(ctaRef.current, {
           opacity: 0,
@@ -73,7 +61,6 @@ export default function FAQSection() {
 
   return (
     <section id="faq" ref={sectionRef} className="py-20 sm:py-28 px-4 bg-white relative overflow-hidden">
-      {/* Decorative background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#ef4d23]/3 rounded-full blur-[120px] pointer-events-none" />
       <div className="max-w-3xl mx-auto relative z-10">
         <div className="faq-header text-center mb-12">
@@ -85,7 +72,7 @@ export default function FAQSection() {
         </div>
 
         <div className="space-y-2 mb-16">
-          {faqs.map((faq, i) => (
+          {FAQS.map((faq, i) => (
             <div
               key={i}
               ref={(el) => { if (el) faqsRef.current[i] = el; }}
@@ -98,6 +85,7 @@ export default function FAQSection() {
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 className="w-full flex items-center justify-between px-5 py-4 text-left"
+                aria-expanded={openIndex === i}
               >
                 <span className={`text-sm font-medium pr-4 transition-colors ${openIndex === i ? "text-[#ef4d23]" : "text-gray-700"}`}>
                   {faq.q}

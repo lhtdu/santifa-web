@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ChevronRight, ArrowUp } from "lucide-react";
+import { CTA_LINKS } from "@/app/config/links";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -75,7 +76,7 @@ export default function CTASection() {
 
           <div className="cta-buttons flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="https://forms.gle/TPtYyRLiU7yE3nzAA"
+              href={CTA_LINKS.bookCall}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2.5 bg-[#ef4d23] hover:bg-[#d94420] text-white rounded-full px-7 py-3 text-[14px] font-semibold transition-colors shadow-lg shadow-orange-100 hover:shadow-xl"

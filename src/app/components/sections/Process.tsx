@@ -87,7 +87,7 @@ export default function Process() {
                 <div className="w-10 h-10 rounded-xl bg-[#fee8e4] flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-[#ef4d23] transition-all duration-300">
                   <Icon size={18} className="text-[#ef4d23] group-hover:text-white transition-colors duration-300" />
                 </div>
-                <h4 className="text-[#0b0f1a] font-bold text-base mb-2">{step.title}</h4>
+                <h3 className="text-[#0b0f1a] font-bold text-base mb-2">{step.title}</h3>
                 <p className="text-gray-500 text-xs leading-relaxed">{step.desc}</p>
               </div>
             );
@@ -105,7 +105,7 @@ export default function Process() {
             ref={(el) => { if (el) compareRef.current[0] = el; }}
             className="rounded-2xl border-2 border-dashed border-gray-200 bg-gray-50 p-7"
           >
-            <h4 className="text-gray-500 font-extrabold text-base uppercase tracking-wider mb-5">Solo VAs<br />Freelancers</h4>
+            <h3 className="text-gray-500 font-extrabold text-base uppercase tracking-wider mb-5">Solo VAs<br />Freelancers</h3>
             <ul className="space-y-2.5">
               {["One person, no backup", "Disappear without notice", "You manage every task", "Inconsistent quality", "No reporting", "Flat fee regardless of results", "Only does what you tell them", "One skill (listing OR CS OR design)", "No compliance monitoring", "Just another freelancer"].map((item) => (
                 <li key={item} className="flex items-start gap-2.5 text-sm text-gray-400">

@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, Check } from "lucide-react";
+import { CTA_LINKS } from "@/app/config/links";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,7 +17,6 @@ const plans = [
     tagline: "Full operations management for both platforms — listings, orders, customer service, and growth strategy.",
     features: ["Product Research & Listing", "Customer Service", "Fulfillment", "Handle Returns & Refunds", "Risk Account Monitoring", "Growth Strategy Consultant", "Multi-Platform Sync"],
     cta: "Get started",
-    ctaLink: "https://forms.gle/TPtYyRLiU7yE3nzAA",
   },
   {
     name: "Order Processing",
@@ -26,7 +26,6 @@ const plans = [
     tagline: "Dedicated order processing and fulfillment handling so you can focus on scaling your business.",
     features: ["Order Import & Validation", "Tracking Updates", "Return & Exchange Handling", "Daily Order Reports", "Priority Support"],
     cta: "Get started",
-    ctaLink: "https://forms.gle/TPtYyRLiU7yE3nzAA",
   },
   {
     name: "Ad Creative Package",
@@ -36,7 +35,6 @@ const plans = [
     tagline: "High-converting ad videos designed to help you test, launch, and scale your products.",
     features: ["Hook-focused editing (optimized for ads)", "Subtitles + clean cuts", "Basic motion & pacing optimization", "AI B-roll integration (if needed)", "1 Revision per video", "Ready-to-run format (TikTok / Meta)"],
     cta: "Get started",
-    ctaLink: "https://forms.gle/TPtYyRLiU7yE3nzAA",
   },
   {
     name: "Custom Package",
@@ -45,8 +43,7 @@ const plans = [
     period: "/project",
     tagline: "Businesses with unique needs that require a customized, holistic approach to their digital strategy.",
     features: ["Comprehensive Business Analysis", "Custom Strategy Development", "Dedicated Account Manager", "Monthly Check-ins & Adjustments", "Advanced Analytics and Reporting", "Campaign Management for Paid Ads", "Personalized Training for Your Team", "Direct Support via Email or Phone"],
-    cta: "Get started",
-    ctaLink: "https://forms.gle/TPtYyRLiU7yE3nzAA",
+    cta: "Get a quote",
     highlight: true,
   },
 ];
@@ -133,7 +130,7 @@ export default function Pricing() {
               </ul>
 
               <a
-                href={plan.ctaLink}
+                href={plan.highlight ? CTA_LINKS.customQuote : CTA_LINKS.bookCall}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-semibold text-sm transition-all mt-auto ${

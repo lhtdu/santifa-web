@@ -19,17 +19,17 @@ const SocialIcon = ({ type }: { type: string }) => {
 };
 
 const socials = [
-  { type: "linkedin", href: "https://linkedin.com/", label: "Linkedin" },
-  { type: "facebook", href: "https://facebook.com/", label: "Facebook" },
-  { type: "twitter", href: "https://twitter.com/", label: "Twitter" },
-  { type: "instagram", href: "https://instagram.com/", label: "Instagram" },
-  { type: "youtube", href: "https://youtube.com/", label: "Youtube" },
+  { type: "linkedin", href: "https://www.linkedin.com/company/santifa", label: "Linkedin" },
+  { type: "facebook", href: "https://www.facebook.com/santifa.io", label: "Facebook" },
+  { type: "twitter", href: "https://twitter.com/santifa_io", label: "Twitter" },
+  { type: "instagram", href: "https://www.instagram.com/santifa.io", label: "Instagram" },
+  { type: "youtube", href: "https://www.youtube.com/@santifa", label: "Youtube" },
 ];
 
 const footerLinks = [
   { section: "Navigation", items: [{ label: "Services", href: "#services" }, { label: "Results", href: "#projects" }, { label: "How It Works", href: "#process" }, { label: "FAQ", href: "#faq" }] },
-  { section: "Company", items: [{ label: "About", href: "#" }, { label: "Careers", href: "#" }, { label: "Blog", href: "#" }, { label: "Contact", href: "#faq" }] },
-  { section: "Legal", items: [{ label: "Privacy Policy", href: "#" }, { label: "Terms of Service", href: "#" }, { label: "Cookie Policy", href: "#" }] },
+  { section: "Company", items: [{ label: "About", href: "/about" }, { label: "Careers", href: "/careers" }, { label: "Blog", href: "/blog" }, { label: "Contact", href: "#faq" }] },
+  { section: "Legal", items: [{ label: "Privacy Policy", href: "/privacy" }, { label: "Terms of Service", href: "/terms" }, { label: "Cookie Policy", href: "/cookie-policy" }] },
 ];
 
 export default function Footer() {
@@ -109,7 +109,7 @@ export default function Footer() {
 
           {footerLinks.map((section, i) => (
             <div key={section.section} ref={(el) => { colRefs.current[i] = el; }}>
-              <h4 className="text-[#0b0f1a] font-semibold text-sm mb-4">{section.section}</h4>
+              <h3 className="text-[#0b0f1a] font-semibold text-sm mb-4">{section.section}</h3>
               <ul className="space-y-2.5">
                 {section.items.map((item) => (
                   <li key={item.label}>

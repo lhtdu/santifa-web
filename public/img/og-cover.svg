@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef8f6"/>
+      <stop offset="100%" stop-color="#fee8e4"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ef4d23"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="950" cy="100" r="240" fill="#ef4d23" opacity="0.08"/>
+  <circle cx="200" cy="500" r="200" fill="#ef4d23" opacity="0.06"/>
+  <rect x="100" y="120" width="64" height="64" rx="14" fill="url(#accent)"/>
+  <text x="132" y="166" font-family="Arial, sans-serif" font-size="40" font-weight="700" fill="white" text-anchor="middle">S</text>
+  <text x="185" y="165" font-family="Arial, sans-serif" font-size="36" font-weight="700" fill="#0b0f1a">Santifa<tspan fill="#ef4d23">.io</tspan></text>
+  <text x="100" y="290" font-family="Arial, sans-serif" font-size="56" font-weight="700" fill="#0b0f1a">Ecommerce operations,</text>
+  <text x="100" y="360" font-family="Georgia, serif" font-size="56" font-style="italic" fill="#ef4d23">creative</text>
+  <text x="320" y="360" font-family="Arial, sans-serif" font-size="56" font-weight="700" fill="#0b0f1a">, and growth,</text>
+  <text x="100" y="430" font-family="Arial, sans-serif" font-size="56" font-weight="700" fill="#ef4d23">fully handled.</text>
+  <text x="100" y="500" font-family="Arial, sans-serif" font-size="22" fill="#64748b">eBay and Etsy Operations - POD Design - Meta Ad Creatives</text>
+  <rect x="100" y="540" width="380" height="44" rx="22" fill="white" stroke="#fee8e4" stroke-width="2"/>
+  <text x="290" y="569" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#0b0f1a" text-anchor="middle">200+ accounts - $300K+ monthly GMV - 7+ years</text>
+</svg>
